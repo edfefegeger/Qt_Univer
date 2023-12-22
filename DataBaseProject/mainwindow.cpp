@@ -70,7 +70,26 @@ void MainWindow::on_addGoodsButton_clicked()
     Goods goods;
     goods.Name =  ui->NameTextEdit->toPlainText();
     goods.Price =  ui->PriceTextEdit->toPlainText();
+    // Проверка на заполнение всех полей
+    if (goods.Name.isEmpty() || goods.Price.isEmpty())
+    {
+        QMessageBox::critical(this, "Ошибка", "Вы заполнили не все поля");
+        return;
+    }
 
+
+    if (_dbService->isProviderEmailExists(goods.Name))
+    {
+        QMessageBox::critical(this, "Ошибка", "такое имя уже существует");
+        return;
+    }
+
+
+    if (_dbService->isProviderEmailExists(goods.Price))
+    {
+        QMessageBox::critical(this, "Предупреждение", "такое имя уже существует");
+        return;
+    }
     auto result = _dbService->
             SetQuery("INSERT INTO Goods(Name, Price)"" VALUES('"+goods.Name+"','" +goods.Price+"')");
     QMessageBox msgBox;
@@ -232,6 +251,13 @@ void MainWindow::on_addSaleButton_clicked()
     Sale sale;
     sale.Count =  ui->saleCountTextEdit->toPlainText().toInt();
     sale.Price =  ui->salePriceTextEdit->toPlainText().toInt();
+    QString count1 =  ui->saleCountTextEdit->toPlainText();
+    QString price1 =  ui->salePriceTextEdit->toPlainText();
+    if (count1.isEmpty() || price1.isEmpty())
+    {
+        QMessageBox::critical(this, "Ошибка", "Вы заполнили не все поля");
+        return;
+    }
     sale.Date =  ui->saleDateTimeEdit->date();
 
     auto query = QString("INSERT INTO Provider(Price, Count,Date)"" VALUES('%1','%2','%3')")
@@ -321,6 +347,26 @@ void MainWindow::on_addServicesButton_clicked()
     Services services;
     services.Name =  ui->servicesNameTextEdit->toPlainText();
     services.Price =  ui->servicesPriceTextEdit->toPlainText();
+    // Проверка на заполнение всех полей
+    if (services.Name.isEmpty() || services.Price.isEmpty())
+    {
+        QMessageBox::critical(this, "Ошибка", "Вы заполнили не все поля");
+        return;
+    }
+
+
+    if (_dbService->isProviderEmailExists(services.Name))
+    {
+        QMessageBox::critical(this, "Ошибка", "такое имя уже существует");
+        return;
+    }
+
+
+    if (_dbService->isProviderEmailExists(services.Price))
+    {
+        QMessageBox::critical(this, "Предупреждение", "такое имя уже существует");
+        return;
+    }
     auto result = _dbService->
             SetQuery("INSERT INTO Services(Name, Price)"" VALUES('"+services.Name+"','" +services.Price+"')");
     QMessageBox msgBox;
@@ -363,10 +409,31 @@ void MainWindow::on_addUnitsButton_clicked()
     Unit unit;
     unit.Name =  ui->unitsNameTextEdit->toPlainText();
     unit.ShortName =  ui->unitsShortNameTextEdit->toPlainText();
+    if (unit.Name.isEmpty() || unit.ShortName.isEmpty())
+    {
+        QMessageBox::critical(this, "Ошибка", "Вы заполнили не все поля");
+        return;
+    }
+
+    // Проверка на существование поставщика с таким же именем
+    if (_dbService->isProviderEmailExists(unit.Name))
+    {
+        QMessageBox::critical(this, "Ошибка", "такое имя уже существует");
+        return;
+    }
+
+    // Проверка на существование поставщика с таким же email
+    if (_dbService->isProviderEmailExists(unit.ShortName))
+    {
+        QMessageBox::critical(this, "Ошибка", "Поставщик с таким email уже существует");
+        return;
+    }
     auto result = _dbService->
             SetQuery("INSERT INTO Units(Name, ShortName)"" VALUES('"+unit.Name+"','" +unit.ShortName+"')");
     QMessageBox msgBox;
     msgBox.setText(result ? "Успешно!" : "Произошла ошибка! попробуйте заново!");
+
+
     msgBox.exec();
     ui->unitsDataTable->setModel(_dbService->GetModel("SELECT * FROM Units"));
     ui->unitsDataTable->hideColumn(0);
@@ -423,7 +490,29 @@ void MainWindow::on_addPriceButton_clicked()
 {
     Price price;
     price.Name =  ui->priceNameTextEdit->toPlainText();
+    QString Count1 =  ui->priceCountTextEdit->toPlainText();
     price.Count =  ui->priceCountTextEdit->toPlainText().toInt();
+
+    // Проверка на заполнение всех полей
+    if (price.Name.isEmpty() || Count1.isEmpty())
+    {
+        QMessageBox::critical(this, "Ошибка", "Вы заполнили не все поля");
+        return;
+    }
+
+
+    if (_dbService->isProviderEmailExists(price.Name))
+    {
+        QMessageBox::critical(this, "Ошибка", "такое имя уже существует");
+        return;
+    }
+
+
+    if (_dbService->isProviderEmailExists(Count1))
+    {
+        QMessageBox::critical(this, "Предупреждение", "такое имя уже существует");
+        return;
+    }
 
     auto query = QString("INSERT INTO Price(Name, Count)"" VALUES('%1',%2)").arg(price.Name).arg(price.Count );
     auto result = _dbService->SetQuery(query);
@@ -484,7 +573,18 @@ void MainWindow::on_addPhoneButton_clicked()
 {
     Phone phone;
     phone.name =  ui->phoneNumberTextEdit->toPlainText();
+    if (phone.name.isEmpty())
+    {
+        QMessageBox::critical(this, "Ошибка", "Вы заполнили не все поля");
+        return;
+    }
 
+    // Проверка на существование поставщика с таким же именем
+    if (_dbService->isProviderEmailExists(phone.name))
+    {
+        QMessageBox::critical(this, "Предупреждение", "такой номер уже сещуствует");
+        return;
+    }
     auto query = QString("INSERT INTO Phone(Number)"" VALUES('%1`)").arg(phone.name);
     auto result = _dbService->SetQuery(query);
 
@@ -535,6 +635,26 @@ void MainWindow::on_addLocalityButton_clicked()
     Locality locality;
     locality.Name =  ui->localityNameTextEdit->toPlainText();
     locality.ShortName =  ui->localityShortNameTextEdit->toPlainText();
+    // Проверка на заполнение всех полей
+    if (locality.Name.isEmpty() || locality.ShortName.isEmpty())
+    {
+        QMessageBox::critical(this, "Ошибка", "Вы заполнили не все поля");
+        return;
+    }
+
+
+    if (_dbService->isProviderEmailExists(locality.Name))
+    {
+        QMessageBox::critical(this, "Ошибка", "такое имя уже существует");
+        return;
+    }
+
+
+    if (_dbService->isProviderEmailExists(locality.ShortName))
+    {
+        QMessageBox::critical(this, "Предупреждение", "такое имя уже существует");
+        return;
+    }
     auto result = _dbService->
             SetQuery("INSERT INTO Locality(Name, ShortName)"" VALUES('"+locality.Name+"','" +locality.ShortName+"')");
     QMessageBox msgBox;
@@ -705,7 +825,6 @@ void MainWindow::on_exitButton_10_clicked()
     hide();
     close();
 }
-
 
 
 

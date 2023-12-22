@@ -116,6 +116,8 @@ class MainWindow : public QMainWindow
 
 
 
+        void on_tabWidget_currentChanged(int index);
+
 private:
         Ui::MainWindow *ui;
         User* _user;
