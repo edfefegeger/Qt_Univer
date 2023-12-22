@@ -15,6 +15,9 @@ class DatabaseService
         DatabaseService();
         ~DatabaseService();
         QSqlDatabase _dataBase;
+        bool isProviderNameExists(const QString& name);
+        bool isProviderEmailExists(const QString& email);
+
 
         bool SetQuery(const QString& queryString);
         QSqlQueryModel* GetModel(const QString& queryString);

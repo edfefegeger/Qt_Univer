@@ -114,6 +114,8 @@ class MainWindow : public QMainWindow
 
         void on_exitButton_8_clicked();
 
+
+
 private:
         Ui::MainWindow *ui;
         User* _user;

@@ -129,24 +129,42 @@ void MainWindow::on_deleteGoodsButton_clicked()
 void MainWindow::on_addProviderButton_clicked()
 {
     Provider provider;
-    provider.Name =  ui->providerNameTextEdit->toPlainText();
-    provider.Email =  ui->providerEmailTextEdit->toPlainText();
+    provider.Name = ui->providerNameTextEdit->toPlainText();
+    provider.Email = ui->providerEmailTextEdit->toPlainText();
 
-    // проверка на заполнение всех полей
+    // Проверка на заполнение всех полей
     if (provider.Name.isEmpty() || provider.Email.isEmpty())
     {
         QMessageBox::critical(this, "Ошибка", "Вы заполнили не все поля");
         return;
     }
 
-    auto result = _dbService->
-            SetQuery("INSERT INTO Provider(Name, Email)"" VALUES('"+provider.Name+"','" +provider.Email+"')");
+    // Проверка на существование поставщика с таким же именем
+    if (_dbService->isProviderEmailExists(provider.Name))
+    {
+        QMessageBox::critical(this, "Ошибка", "Поставщик с таким именем уже существует");
+        return;
+    }
+
+    // Проверка на существование поставщика с таким же email
+    if (_dbService->isProviderEmailExists(provider.Email))
+    {
+        QMessageBox::critical(this, "Ошибка", "Поставщик с таким email уже существует");
+        return;
+    }
+
+    // Вставка данных в базу данных
+    auto result = _dbService->SetQuery("INSERT INTO Provider(Name, Email) VALUES('" + provider.Name + "','" + provider.Email + "')");
+
     QMessageBox msgBox;
     msgBox.setText(result ? "Успешно!" : "Ошибка! Данный поставщик уже есть в базе данных. Проверьте корректность введенных данных и попробуйте снова.");
     msgBox.exec();
+
+    // Обновление отображения данных
     ui->providerDataTable->setModel(_dbService->GetModel("SELECT * FROM Provider"));
     ui->providerDataTable->hideColumn(0);
 }
+
 void MainWindow::on_editProviderButton_clicked()
 {
     Provider provider;
@@ -687,4 +705,7 @@ void MainWindow::on_exitButton_10_clicked()
     hide();
     close();
 }
+
+
+
 

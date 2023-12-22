@@ -43,7 +43,36 @@ User* DatabaseService::GetUser(QString role, QString password)
 
     return realUser;
 }
+bool DatabaseService::isProviderNameExists(const QString& name)
+{
+    QSqlQueryModel model;
+    QSqlQuery query(_dataBase);
+    query.prepare("SELECT * FROM Provider WHERE Name = ?");
+    query.addBindValue(name);
 
+    if (query.exec())
+    {
+        model.setQuery(query);
+        return model.rowCount() > 0;
+    }
+
+    return false;
+}
+bool DatabaseService::isProviderEmailExists(const QString& email)
+{
+    QSqlQueryModel model;
+    QSqlQuery query(_dataBase);
+    query.prepare("SELECT * FROM Provider WHERE Email = ?");
+    query.addBindValue(email);
+
+    if (query.exec())
+    {
+        model.setQuery(query);
+        return model.rowCount() > 0;
+    }
+
+    return false;
+}
 QSqlQueryModel*  DatabaseService::GetModel(const QString &queryString)
 {
     QSqlQueryModel* model = new QSqlQueryModel();
