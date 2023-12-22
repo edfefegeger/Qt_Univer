@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>838</width>
-    <height>584</height>
+    <width>851</width>
+    <height>597</height>
    </rect>
   </property>
   <property name="font">
@@ -22,12 +22,12 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTabWidget" name="tabWidget">
+   <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>921</width>
+      <width>841</width>
       <height>541</height>
      </rect>
     </property>
@@ -54,43 +54,10 @@
     <property name="layoutDirection">
      <enum>Qt::LeftToRight</enum>
     </property>
-    <property name="tabPosition">
-     <enum>QTabWidget::West</enum>
-    </property>
-    <property name="tabShape">
-     <enum>QTabWidget::Rounded</enum>
-    </property>
     <property name="currentIndex">
-     <number>8</number>
+     <number>1</number>
     </property>
-    <property name="iconSize">
-     <size>
-      <width>30</width>
-      <height>20</height>
-     </size>
-    </property>
-    <property name="elideMode">
-     <enum>Qt::ElideRight</enum>
-    </property>
-    <property name="usesScrollButtons">
-     <bool>false</bool>
-    </property>
-    <property name="documentMode">
-     <bool>true</bool>
-    </property>
-    <property name="tabsClosable">
-     <bool>false</bool>
-    </property>
-    <property name="movable">
-     <bool>false</bool>
-    </property>
-    <property name="tabBarAutoHide">
-     <bool>false</bool>
-    </property>
-    <widget class="QWidget" name="tab_6">
-     <attribute name="title">
-      <string>Единицы измерения</string>
-     </attribute>
+    <widget class="QWidget" name="Units" native="true">
      <widget class="QPushButton" name="addUnitsButton">
       <property name="geometry">
        <rect>
@@ -281,10 +248,7 @@
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab">
-     <attribute name="title">
-      <string>Постащики</string>
-     </attribute>
+    <widget class="QWidget" name="suppliers" native="true">
      <widget class="QTableView" name="providerDataTable">
       <property name="geometry">
        <rect>
@@ -475,10 +439,7 @@
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab_3">
-     <attribute name="title">
-      <string>Продажи</string>
-     </attribute>
+    <widget class="QWidget" name="sales" native="true">
      <widget class="QTextEdit" name="saleCountTextEdit">
       <property name="geometry">
        <rect>
@@ -720,10 +681,7 @@
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab_4">
-     <attribute name="title">
-      <string>Улицы</string>
-     </attribute>
+    <widget class="QWidget" name="streets" native="true">
      <widget class="QTableView" name="servicesDataTable">
       <property name="geometry">
        <rect>
@@ -914,10 +872,7 @@
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab_2">
-     <attribute name="title">
-      <string>Товары</string>
-     </attribute>
+    <widget class="QWidget" name="goods" native="true">
      <widget class="QTableView" name="goodsDataTable">
       <property name="geometry">
        <rect>
@@ -1119,10 +1074,7 @@
      <zorder>line_9</zorder>
      <zorder>line_10</zorder>
     </widget>
-    <widget class="QWidget" name="tab_7">
-     <attribute name="title">
-      <string>Цена</string>
-     </attribute>
+    <widget class="QWidget" name="prices" native="true">
      <widget class="QTextEdit" name="priceNameTextEdit">
       <property name="geometry">
        <rect>
@@ -1313,10 +1265,7 @@
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab_8">
-     <attribute name="title">
-      <string>Телефонный номер</string>
-     </attribute>
+    <widget class="QWidget" name="phone_numbers" native="true">
      <widget class="QTableView" name="phoneDataTable">
       <property name="geometry">
        <rect>
@@ -1456,10 +1405,7 @@
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab_12">
-     <attribute name="title">
-      <string>Накладная</string>
-     </attribute>
+    <widget class="QWidget" name="consignment" native="true">
      <widget class="QPushButton" name="addInvoiceButton">
       <property name="geometry">
        <rect>
@@ -1617,10 +1563,7 @@
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab_13">
-     <attribute name="title">
-      <string>Позиция накладной</string>
-     </attribute>
+    <widget class="QWidget" name="invoice_item" native="true">
      <widget class="QTextEdit" name="InvoicePositionUnitPriceTextEdit">
       <property name="geometry">
        <rect>
@@ -1811,10 +1754,7 @@
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab_10">
-     <attribute name="title">
-      <string>Населённый пункт</string>
-     </attribute>
+    <widget class="QWidget" name="locality" native="true">
      <widget class="QPushButton" name="deleteLocalityButton">
       <property name="geometry">
        <rect>
@@ -2012,12 +1952,23 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>838</width>
+     <width>851</width>
      <height>20</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
  </widget>
  <resources/>
  <connections/>

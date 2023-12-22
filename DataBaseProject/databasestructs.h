@@ -72,5 +72,29 @@ struct InvoiceType{
         QString Name;
         QString ShortName;
 };
+// Новые структуры для таблиц employees, clients и orders
+struct Employee
+{
+    int Id;
+    QString Name;
+    QString Position;
+    int Salary;
+};
 
+struct Client
+{
+    int Id;
+    QString Name;
+    QString Email;
+    QString Phone;
+};
+
+struct Order
+{
+    int Id;
+    int ClientId;
+    int EmployeeId;
+    int TotalPrice;
+    QDate OrderDate;
+};
 #endif // DATABASESTRUCTS_H

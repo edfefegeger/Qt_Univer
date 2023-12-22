@@ -23,7 +23,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
     QByteArrayData data[55];
-    char stringdata0[1500];
+    char stringdata0[1503];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -83,10 +83,10 @@ QT_MOC_LITERAL(47, 1263, 23), // "on_exitButton_7_clicked"
 QT_MOC_LITERAL(48, 1287, 23), // "on_exitButton_9_clicked"
 QT_MOC_LITERAL(49, 1311, 24), // "on_exitButton_10_clicked"
 QT_MOC_LITERAL(50, 1336, 23), // "on_exitButton_8_clicked"
-QT_MOC_LITERAL(51, 1360, 27), // "on_tabWidget_currentChanged"
-QT_MOC_LITERAL(52, 1388, 35), // "on_addInvoicePositionButton_c..."
-QT_MOC_LITERAL(53, 1424, 36), // "on_editInvoicePositionButton_..."
-QT_MOC_LITERAL(54, 1461, 38) // "on_deleteInvoicePositionButto..."
+QT_MOC_LITERAL(51, 1360, 35), // "on_addInvoicePositionButton_c..."
+QT_MOC_LITERAL(52, 1396, 36), // "on_editInvoicePositionButton_..."
+QT_MOC_LITERAL(53, 1433, 38), // "on_deleteInvoicePositionButto..."
+QT_MOC_LITERAL(54, 1472, 30) // "on_providerDataTable_activated"
 
     },
     "MainWindow\0on_addGoodsButton_clicked\0"
@@ -133,10 +133,10 @@ QT_MOC_LITERAL(54, 1461, 38) // "on_deleteInvoicePositionButto..."
     "on_exitButton_9_clicked\0"
     "on_exitButton_10_clicked\0"
     "on_exitButton_8_clicked\0"
-    "on_tabWidget_currentChanged\0"
     "on_addInvoicePositionButton_clicked\0"
     "on_editInvoicePositionButton_clicked\0"
-    "on_deleteInvoicePositionButton_clicked"
+    "on_deleteInvoicePositionButton_clicked\0"
+    "on_providerDataTable_activated"
 };
 #undef QT_MOC_LITERAL
 
@@ -201,10 +201,10 @@ static const uint qt_meta_data_MainWindow[] = {
       48,    0,  331,    2, 0x08 /* Private */,
       49,    0,  332,    2, 0x08 /* Private */,
       50,    0,  333,    2, 0x08 /* Private */,
-      51,    1,  334,    2, 0x08 /* Private */,
-      52,    0,  337,    2, 0x08 /* Private */,
-      53,    0,  338,    2, 0x08 /* Private */,
-      54,    0,  339,    2, 0x08 /* Private */,
+      51,    0,  334,    2, 0x08 /* Private */,
+      52,    0,  335,    2, 0x08 /* Private */,
+      53,    0,  336,    2, 0x08 /* Private */,
+      54,    1,  337,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -254,10 +254,10 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,    6,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 5,    6,
 
        0        // eod
 };
@@ -315,10 +315,9 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 44: _t->on_exitButton_9_clicked(); break;
         case 45: _t->on_exitButton_10_clicked(); break;
         case 46: _t->on_exitButton_8_clicked(); break;
-
-        case 48: _t->on_addInvoicePositionButton_clicked(); break;
-        case 49: _t->on_editInvoicePositionButton_clicked(); break;
-        case 50: _t->on_deleteInvoicePositionButton_clicked(); break;
+        case 47: _t->on_addInvoicePositionButton_clicked(); break;
+        case 48: _t->on_editInvoicePositionButton_clicked(); break;
+        case 49: _t->on_deleteInvoicePositionButton_clicked(); break;
         default: ;
         }
     }

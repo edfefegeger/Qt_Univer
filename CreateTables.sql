@@ -1,47 +1,47 @@
 USE [QTDataBase];
 
---œ‡ÈÒ
+--√è√∞√†√©√±
 CREATE TABLE [Price]
 (
     [Id] INT PRIMARY KEY IDENTITY(1,1) CHECK([Id] < 100000) NOT NULL ,
     [Name] NVARCHAR(100) CHECK([Name] LIKE '[A-Z]%') NOT NULL,
 	[Price] INT CHECK([Price] > 0 AND [Price] < 100000) NOT NULL
 )
---≈‰ËÌËˆ˚ ËÁÏÂÂÌËˇ
+--√Ö√§√®√≠√®√∂√ª √®√ß√¨√•√∞√•√≠√®√ø
 CREATE TABLE [Units]
 (
     [Id] INT PRIMARY KEY IDENTITY(1,1) CHECK([Id] < 100000) NOT NULL ,
     [Name] NVARCHAR(100) CHECK([Name] LIKE '[A-Z]%') NOT NULL,
 	[ShortName] NVARCHAR(50) CHECK(Len([ShortName]) < 100000 AND [ShortName] LIKE '[A-Z]%') NOT NULL
 )
---’‡‡ÍÚÂËÒÚËÍ‡
+--√ï√†√∞√†√™√≤√•√∞√®√±√≤√®√™√†
 CREATE TABLE [Characteristic]
 (
     [Id] INT PRIMARY KEY IDENTITY(1,1) CHECK([Id] < 100000) NOT NULL ,
     [Name] NVARCHAR(100) CHECK([Name] LIKE '[A-Z]%') NOT NULL,
 	[ShortName] NVARCHAR(50) CHECK(Len([ShortName]) < 100000 AND [ShortName] LIKE '[A-Z]%') NOT NULL
 )
---“Ó‚‡
+--√í√Æ√¢√†√∞
 CREATE TABLE [Product]
 (
     [Id] INT PRIMARY KEY IDENTITY(1,1) CHECK([Id] < 100000) NOT NULL ,
     [Name] NVARCHAR(100) CHECK([Name] LIKE '[A-Z]%') NOT NULL,
 	[ShortName] NVARCHAR(50) CHECK(Len([ShortName]) < 100000 AND [ShortName] LIKE '[A-Z]%') NOT NULL
 )
---œŒ«»÷»ﬂ Õ¿ À¿ƒÕŒ…
+--√è√é√á√à√ñ√à√ü √ç√Ä√ä√ã√Ä√Ñ√ç√é√â
 CREATE TABLE [InvoicePosition]
 (
     [Id] INT PRIMARY KEY IDENTITY(1,1) CHECK([Id] < 100000) NOT NULL ,
     [Count] INT CHECK([Count] > 0 AND [Count] < 10000) NOT NULL,
 	[UnitPrice] INT CHECK([UnitPrice] > 0 AND [UnitPrice] < 1000000) NOT NULL
 )
---Ì‡ÍÎ‡‰Ì‡ˇ
+--√≠√†√™√´√†√§√≠√†√ø
 CREATE TABLE [Invoice]
 (
     [Id] INT PRIMARY KEY IDENTITY(1,1) CHECK([Id] < 100000) NOT NULL ,
     [Date] DateTime NOT NULL,
 )
---“ËÔ Ì‡ÍÎ‡‰ÌÓÈ
+--√í√®√Ø √≠√†√™√´√†√§√≠√Æ√©
 CREATE TABLE [InvoiceType]
 (
     [Id] INT PRIMARY KEY IDENTITY(1,1) CHECK([Id] < 10000) NOT NULL ,
@@ -49,7 +49,7 @@ CREATE TABLE [InvoiceType]
 	[ShortName] NVARCHAR(50) CHECK(Len([ShortName]) < 10000 AND [ShortName] LIKE '[A-Z]%') NOT NULL
 )
 
---œŒ—“¿¬Ÿ» 
+--√è√é√ë√í√Ä√Ç√ô√à√ä
 CREATE TABLE [Provider]
 (
     [Id] INT PRIMARY KEY IDENTITY(1,1) CHECK([Id] < 100000) NOT NULL ,
@@ -57,14 +57,14 @@ CREATE TABLE [Provider]
     [Email] NVARCHAR(15) CHECK([Email] LIKE '[A-Z]%') NOT NULL,
 )
 
---œÓÍÛÔ‡ÚÂÎ¸
+--√è√Æ√™√≥√Ø√†√≤√•√´√º
 CREATE TABLE [Buyer]
 (
     [Id] INT PRIMARY KEY IDENTITY(1,1) CHECK([Id] < 100000) NOT NULL ,
     [Email] NVARCHAR(15) CHECK([Email] LIKE '[A-Z]%') NOT NULL,
 )
 
---ﬁ ÎËˆÓ
+--√û√∞ √´√®√∂√Æ
 CREATE TABLE [Entity]
 (
     [Id] INT PRIMARY KEY IDENTITY(1,1) CHECK([Id] < 100000) NOT NULL ,
@@ -73,7 +73,7 @@ CREATE TABLE [Entity]
 	[OGRN] INT CHECK([OGRN] < 10000000000) NOT NULL
 )
 
---“ËÔ ˛ ÎËˆÓ
+--√í√®√Ø √æ√∞ √´√®√∂√Æ
 CREATE TABLE [EntityType]
 (
     [Id] INT PRIMARY KEY IDENTITY(1,1) CHECK([Id] < 100000) NOT NULL ,
@@ -81,7 +81,7 @@ CREATE TABLE [EntityType]
 	[ShortName] NVARCHAR(50) CHECK(Len([ShortName]) < 100000 AND [ShortName] LIKE '[A-Z]%') NOT NULL
 )
 
---‘ËÁ ÎËˆÓ
+--√î√®√ß √´√®√∂√Æ
 CREATE TABLE [Individual]
 (
     [Id] INT PRIMARY KEY IDENTITY(1,1) CHECK([Id] < 100000) NOT NULL ,
@@ -91,7 +91,7 @@ CREATE TABLE [Individual]
 	[Passport] INT CHECK([Passport] < 10000000000000) NOT NULL
 )
 
---œ–Œƒ¿∆»
+--√è√ê√é√Ñ√Ä√Ü√à
 CREATE TABLE [Sales]
 (
     [Id] INT PRIMARY KEY IDENTITY(1,1) CHECK([Id] < 100000) NOT NULL ,
@@ -100,21 +100,21 @@ CREATE TABLE [Sales]
 	[Date] DateTime NOT NULL
 )
 
---“≈À≈‘ŒÕ
+--√í√Ö√ã√Ö√î√é√ç
 CREATE TABLE [Phone]
 (
     [Id] INT PRIMARY KEY IDENTITY(1,1) CHECK([Id] < 100000) NOT NULL ,
     [Number] NVARCHAR(100) CHECK([Number] < 100000) NOT NULL,
 )
 
---“ËÔ “≈À≈‘ŒÕ¿
+--√í√®√Ø √í√Ö√ã√Ö√î√é√ç√Ä
 CREATE TABLE [PhoneType]
 (
     [Id] INT PRIMARY KEY IDENTITY(1,1) CHECK([Id] < 100000) NOT NULL ,
     [Name] NVARCHAR(100) CHECK([Name] LIKE '[A-Z]%') NOT NULL,
 )
 
---¿‰ÂÒ
+--√Ä√§√∞√•√±
 CREATE TABLE [Adress]
 (
     [Id] INT PRIMARY KEY IDENTITY(1,1) CHECK([Id] < 100000) NOT NULL ,
@@ -122,7 +122,7 @@ CREATE TABLE [Adress]
 	[ApartmentNumber] INT CHECK([ApartmentNumber] < 100000) NOT NULL
 )
 
---ÚËÔ ÛÎËˆ˚
+--√≤√®√Ø √≥√´√®√∂√ª
 CREATE TABLE [StreetType]
 (
     [Id] INT PRIMARY KEY IDENTITY(1,1) CHECK([Id] < 100000) NOT NULL ,
@@ -130,7 +130,7 @@ CREATE TABLE [StreetType]
 	[ShortName] NVARCHAR(100) CHECK([ShortName] LIKE '[A-Z]%') NOT NULL
 )
 
---ÛÎËˆ‡
+--√≥√´√®√∂√†
 CREATE TABLE [Street]
 (
     [Id] INT PRIMARY KEY IDENTITY(1,1) CHECK([Id] < 100000) NOT NULL ,
@@ -138,7 +138,7 @@ CREATE TABLE [Street]
 	[ShortName] NVARCHAR(100) CHECK([ShortName] LIKE '[A-Z]%') NOT NULL
 )
 
---Ì‡ÒÂÎ∏ÌÌ˚È ÔÛÌÍÚ
+--√≠√†√±√•√´≈æ√≠√≠√ª√© √Ø√≥√≠√™√≤
 CREATE TABLE [Locality]
 (
     [Id] INT PRIMARY KEY IDENTITY(1,1) CHECK([Id] < 100000) NOT NULL ,
@@ -146,10 +146,36 @@ CREATE TABLE [Locality]
 	[ShortName] NVARCHAR(100) CHECK([ShortName] LIKE '[A-Z]%') NOT NULL
 )
 
---ÚËÔ Ì‡ÒÂÎ∏ÌÌÓ„Ó ÔÛÌÍÚ‡
+--√≤√®√Ø √≠√†√±√•√´≈æ√≠√≠√Æ√£√Æ √Ø√≥√≠√™√≤√†
 CREATE TABLE [Localitytype]
 (
     [Id] INT PRIMARY KEY IDENTITY(1,1) CHECK([Id] < 100000) NOT NULL ,
     [Name] NVARCHAR(100) CHECK([Name] LIKE '[A-Z]%') NOT NULL,
 	[ShortName] NVARCHAR(100) CHECK([ShortName] LIKE '[A-Z]%') NOT NULL
 )
+
+CREATE TABLE [Employees]
+(
+    [Id] INT PRIMARY KEY IDENTITY(1,1) CHECK([Id] < 100000) NOT NULL ,
+    [Name] NVARCHAR(200) CHECK([Name] LIKE '[A-Z]%') NOT NULL,
+	[Position] NVARCHAR(200) CHECK([Position] LIKE '[A-Z]%') NOT NULL,
+	[Salary] INT CHECK([Salary] > 0 AND [Salary] < 1000000) NOT NULL
+)
+
+CREATE TABLE [Clients]
+(
+    [Id] INT PRIMARY KEY IDENTITY(1,1) CHECK([Id] < 100000) NOT NULL ,
+    [Name] NVARCHAR(200) CHECK([Name] LIKE '[A-Z]%') NOT NULL,
+	[Email] NVARCHAR(15) CHECK([Email] LIKE '[A-Z]%') NOT NULL,
+	[Phone] NVARCHAR(15) CHECK([Phone] LIKE '[A-Z]%') NOT NULL
+);
+
+
+CREATE TABLE [Orders]
+(
+    [Id] INT PRIMARY KEY IDENTITY(1,1) CHECK([Id] < 100000) NOT NULL ,
+    [ClientId] INT FOREIGN KEY REFERENCES Clients(Id) NOT NULL,
+    [EmployeeId] INT FOREIGN KEY REFERENCES Employees(Id) NOT NULL,
+    [TotalPrice] INT CHECK([TotalPrice] > 0 AND [TotalPrice] < 1000000) NOT NULL,
+    [OrderDate] DateTime NOT NULL
+);

@@ -114,15 +114,13 @@ class MainWindow : public QMainWindow
 
         void on_exitButton_8_clicked();
 
-
-
-        void on_tabWidget_currentChanged(int index);
-
         void on_addInvoicePositionButton_clicked();
 
         void on_editInvoicePositionButton_clicked();
 
         void on_deleteInvoicePositionButton_clicked();
+
+        void on_providerDataTable_activated(const QModelIndex &index);
 
 private:
         Ui::MainWindow *ui;

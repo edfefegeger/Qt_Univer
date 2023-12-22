@@ -961,11 +961,6 @@ void MainWindow::on_exitButton_10_clicked()
 }
 
 
-
-
-
-
-
 void MainWindow::on_addInvoicePositionButton_clicked()
 {
 
@@ -982,4 +977,7 @@ void MainWindow::on_deleteInvoicePositionButton_clicked()
 {
 
 }
+
+
+
 
