@@ -157,7 +157,7 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->setWindowModality(Qt::NonModal);
-        MainWindow->resize(939, 587);
+        MainWindow->resize(838, 584);
         QFont font;
         font.setPointSize(9);
         MainWindow->setFont(font);
@@ -313,11 +313,11 @@ public:
         editSaleButton->setFont(font2);
         label_5 = new QLabel(tab_3);
         label_5->setObjectName(QString::fromUtf8("label_5"));
-        label_5->setGeometry(QRect(10, 390, 201, 31));
+        label_5->setGeometry(QRect(10, 390, 201, 21));
         label_5->setFont(font3);
         label_6 = new QLabel(tab_3);
         label_6->setObjectName(QString::fromUtf8("label_6"));
-        label_6->setGeometry(QRect(10, 440, 201, 31));
+        label_6->setGeometry(QRect(10, 440, 201, 21));
         label_6->setFont(font3);
         deleteSaleButton = new QPushButton(tab_3);
         deleteSaleButton->setObjectName(QString::fromUtf8("deleteSaleButton"));
@@ -329,7 +329,7 @@ public:
         addSaleButton->setFont(font2);
         label_7 = new QLabel(tab_3);
         label_7->setObjectName(QString::fromUtf8("label_7"));
-        label_7->setGeometry(QRect(10, 480, 201, 31));
+        label_7->setGeometry(QRect(10, 480, 201, 21));
         label_7->setFont(font3);
         saleDateTimeEdit = new QDateTimeEdit(tab_3);
         saleDateTimeEdit->setObjectName(QString::fromUtf8("saleDateTimeEdit"));
@@ -341,7 +341,7 @@ public:
         reportOfSales->setFont(font2);
         exitButton_3 = new QPushButton(tab_3);
         exitButton_3->setObjectName(QString::fromUtf8("exitButton_3"));
-        exitButton_3->setGeometry(QRect(800, 480, 131, 41));
+        exitButton_3->setGeometry(QRect(10, 510, 131, 31));
         exitButton_3->setFont(font2);
         line = new QFrame(tab_3);
         line->setObjectName(QString::fromUtf8("line"));
@@ -457,6 +457,17 @@ public:
         line_10->setFrameShadow(QFrame::Plain);
         line_10->setFrameShape(QFrame::HLine);
         tabWidget->addTab(tab_2, QString());
+        editGoodsButton->raise();
+        goodsDataTable->raise();
+        addGoodsButton->raise();
+        NameTextEdit->raise();
+        label->raise();
+        PriceTextEdit->raise();
+        label_2->raise();
+        deleteGoodsButton->raise();
+        exitButton_5->raise();
+        line_9->raise();
+        line_10->raise();
         tab_7 = new QWidget();
         tab_7->setObjectName(QString::fromUtf8("tab_7"));
         priceNameTextEdit = new QTextEdit(tab_7);
@@ -695,7 +706,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 939, 20));
+        menubar->setGeometry(QRect(0, 0, 838, 20));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -703,7 +714,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(9);
+        tabWidget->setCurrentIndex(8);
 
 
         QMetaObject::connectSlotsByName(MainWindow);

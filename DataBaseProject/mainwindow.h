@@ -118,6 +118,12 @@ class MainWindow : public QMainWindow
 
         void on_tabWidget_currentChanged(int index);
 
+        void on_addInvoicePositionButton_clicked();
+
+        void on_editInvoicePositionButton_clicked();
+
+        void on_deleteInvoicePositionButton_clicked();
+
 private:
         Ui::MainWindow *ui;
         User* _user;

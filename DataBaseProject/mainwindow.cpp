@@ -104,7 +104,26 @@ void MainWindow::on_editGoodsButton_clicked()
     Goods goods;
     goods.Name =  ui->NameTextEdit->toPlainText();
     goods.Price =  ui->PriceTextEdit->toPlainText();
+    // Проверка на заполнение всех полей
+    if (goods.Name.isEmpty() || goods.Price.isEmpty())
+    {
+        QMessageBox::critical(this, "Ошибка", "Вы заполнили не все поля");
+        return;
+    }
 
+
+    if (_dbService->isProviderEmailExists(goods.Name))
+    {
+        QMessageBox::critical(this, "Ошибка", "такое имя уже существует");
+        return;
+    }
+
+
+    if (_dbService->isProviderEmailExists(goods.Price))
+    {
+        QMessageBox::critical(this, "Предупреждение", "такое имя уже существует");
+        return;
+    }
     QAbstractItemModel *model = ui->goodsDataTable->model();
     int row_index =  ui->goodsDataTable->selectionModel()->currentIndex().row();
     QString Id =  model->data(model->index(row_index, 0), Qt::DisplayRole).toString();
@@ -189,7 +208,26 @@ void MainWindow::on_editProviderButton_clicked()
     Provider provider;
     provider.Name =  ui->providerNameTextEdit->toPlainText();
     provider.Email =  ui->providerEmailTextEdit->toPlainText();
+    // Проверка на заполнение всех полей
+    if (provider.Name.isEmpty() || provider.Email.isEmpty())
+    {
+        QMessageBox::critical(this, "Ошибка", "Вы заполнили не все поля");
+        return;
+    }
 
+    // Проверка на существование поставщика с таким же именем
+    if (_dbService->isProviderEmailExists(provider.Name))
+    {
+        QMessageBox::critical(this, "Ошибка", "Поставщик с таким именем уже существует");
+        return;
+    }
+
+    // Проверка на существование поставщика с таким же email
+    if (_dbService->isProviderEmailExists(provider.Email))
+    {
+        QMessageBox::critical(this, "Ошибка", "Поставщик с таким email уже существует");
+        return;
+    }
     QAbstractItemModel *model = ui->providerDataTable->model();
     int row_index =  ui->providerDataTable->selectionModel()->currentIndex().row();
     QString Id =  model->data(model->index(row_index, 0), Qt::DisplayRole).toString();
@@ -276,6 +314,13 @@ void MainWindow::on_editSaleButton_clicked()
     sale.Count =  ui->saleCountTextEdit->toPlainText().toInt();
     sale.Price =  ui->salePriceTextEdit->toPlainText().toInt();
     sale.Date =  ui->saleDateTimeEdit->date();
+    QString count1 =  ui->saleCountTextEdit->toPlainText();
+    QString price1 =  ui->salePriceTextEdit->toPlainText();
+    if (count1.isEmpty() || price1.isEmpty())
+    {
+        QMessageBox::critical(this, "Ошибка", "Вы заполнили не все поля");
+        return;
+    }
 
     QAbstractItemModel *model = ui->saleDataTable->model();
     int row_index =  ui->saleDataTable->selectionModel()->currentIndex().row();
@@ -329,7 +374,26 @@ void MainWindow::on_editServicesButton_clicked()
     Services services;
     services.Name =  ui->servicesNameTextEdit->toPlainText();
     services.Price =  ui->servicesPriceTextEdit->toPlainText();
+    // Проверка на заполнение всех полей
+    if (services.Name.isEmpty() || services.Price.isEmpty())
+    {
+        QMessageBox::critical(this, "Ошибка", "Вы заполнили не все поля");
+        return;
+    }
 
+
+    if (_dbService->isProviderEmailExists(services.Name))
+    {
+        QMessageBox::critical(this, "Ошибка", "такое имя уже существует");
+        return;
+    }
+
+
+    if (_dbService->isProviderEmailExists(services.Price))
+    {
+        QMessageBox::critical(this, "Предупреждение", "такое имя уже существует");
+        return;
+    }
     QAbstractItemModel *model = ui->servicesDataTable->model();
     int row_index =  ui->servicesDataTable->selectionModel()->currentIndex().row();
     QString Id =  model->data(model->index(row_index, 0), Qt::DisplayRole).toString();
@@ -443,7 +507,25 @@ void MainWindow::on_editUnitsButton_clicked()
     Unit unit;
     unit.Name =  ui->unitsNameTextEdit->toPlainText();
     unit.ShortName =  ui->unitsShortNameTextEdit->toPlainText();
+    if (unit.Name.isEmpty() || unit.ShortName.isEmpty())
+    {
+        QMessageBox::critical(this, "Ошибка", "Вы заполнили не все поля");
+        return;
+    }
 
+    // Проверка на существование поставщика с таким же именем
+    if (_dbService->isProviderEmailExists(unit.Name))
+    {
+        QMessageBox::critical(this, "Ошибка", "такое имя уже существует");
+        return;
+    }
+
+    // Проверка на существование поставщика с таким же email
+    if (_dbService->isProviderEmailExists(unit.ShortName))
+    {
+        QMessageBox::critical(this, "Ошибка", "Поставщик с таким email уже существует");
+        return;
+    }
     QAbstractItemModel *model = ui->unitsDataTable->model();
     int row_index =  ui->unitsDataTable->selectionModel()->currentIndex().row();
     QString Id =  model->data(model->index(row_index, 0), Qt::DisplayRole).toString();
@@ -528,7 +610,29 @@ void MainWindow::on_editPriceButton_clicked()
     Price price;
     price.Name =  ui->priceNameTextEdit->toPlainText();
     price.Count =  ui->priceCountTextEdit->toPlainText().toInt();
+    QString Count1 =  ui->priceCountTextEdit->toPlainText();
+    price.Count =  ui->priceCountTextEdit->toPlainText().toInt();
 
+    // Проверка на заполнение всех полей
+    if (price.Name.isEmpty() || Count1.isEmpty())
+    {
+        QMessageBox::critical(this, "Ошибка", "Вы заполнили не все поля");
+        return;
+    }
+
+
+    if (_dbService->isProviderEmailExists(price.Name))
+    {
+        QMessageBox::critical(this, "Ошибка", "такое имя уже существует");
+        return;
+    }
+
+
+    if (_dbService->isProviderEmailExists(Count1))
+    {
+        QMessageBox::critical(this, "Предупреждение", "такое имя уже существует");
+        return;
+    }
     QAbstractItemModel *model = ui->priceDataTable->model();
     int row_index =  ui->priceDataTable->selectionModel()->currentIndex().row();
     QString Id =  model->data(model->index(row_index, 0), Qt::DisplayRole).toString();
@@ -613,7 +717,18 @@ void MainWindow::on_editPhoneButton_clicked()
 {
     Phone phone;
     phone.name =  ui->phoneNumberTextEdit->toPlainText();
+    if (phone.name.isEmpty())
+    {
+        QMessageBox::critical(this, "Ошибка", "Вы заполнили не все поля");
+        return;
+    }
 
+    // Проверка на существование поставщика с таким же именем
+    if (_dbService->isProviderEmailExists(phone.name))
+    {
+        QMessageBox::critical(this, "Предупреждение", "такой номер уже сещуствует");
+        return;
+    }
     QAbstractItemModel *model = ui->phoneDataTable->model();
     int row_index =  ui->phoneDataTable->selectionModel()->currentIndex().row();
     QString Id =  model->data(model->index(row_index, 0), Qt::DisplayRole).toString();
@@ -668,7 +783,26 @@ void MainWindow::on_editLocalityButton_clicked()
     Locality locality;
     locality.Name =  ui->localityNameTextEdit->toPlainText();
     locality.ShortName =  ui->localityShortNameTextEdit->toPlainText();
+    // Проверка на заполнение всех полей
+    if (locality.Name.isEmpty() || locality.ShortName.isEmpty())
+    {
+        QMessageBox::critical(this, "Ошибка", "Вы заполнили не все поля");
+        return;
+    }
 
+
+    if (_dbService->isProviderEmailExists(locality.Name))
+    {
+        QMessageBox::critical(this, "Ошибка", "такое имя уже существует");
+        return;
+    }
+
+
+    if (_dbService->isProviderEmailExists(locality.ShortName))
+    {
+        QMessageBox::critical(this, "Предупреждение", "такое имя уже существует");
+        return;
+    }
     QAbstractItemModel *model = ui->localityDataTable->model();
     int row_index =  ui->localityDataTable->selectionModel()->currentIndex().row();
     QString Id =  model->data(model->index(row_index, 0), Qt::DisplayRole).toString();
@@ -827,4 +961,25 @@ void MainWindow::on_exitButton_10_clicked()
 }
 
 
+
+
+
+
+
+void MainWindow::on_addInvoicePositionButton_clicked()
+{
+
+}
+
+
+void MainWindow::on_editInvoicePositionButton_clicked()
+{
+
+}
+
+
+void MainWindow::on_deleteInvoicePositionButton_clicked()
+{
+
+}
 
