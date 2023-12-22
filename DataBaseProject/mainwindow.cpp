@@ -667,3 +667,24 @@ void MainWindow::on_exitButton_6_clicked()
     hide();
     close();
 }
+void MainWindow::on_exitButton_7_clicked()
+{
+    hide();
+    close();
+}
+void MainWindow::on_exitButton_8_clicked()
+{
+    hide();
+    close();
+}
+void MainWindow::on_exitButton_9_clicked()
+{
+    hide();
+    close();
+}
+void MainWindow::on_exitButton_10_clicked()
+{
+    hide();
+    close();
+}
+

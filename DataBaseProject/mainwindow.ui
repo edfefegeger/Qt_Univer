@@ -53,7 +53,7 @@
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>5</number>
+     <number>7</number>
     </property>
     <property name="iconSize">
      <size>
@@ -966,7 +966,7 @@
       <property name="geometry">
        <rect>
         <x>650</x>
-        <y>440</y>
+        <y>430</y>
         <width>141</width>
         <height>41</height>
        </rect>
@@ -1015,7 +1015,7 @@
       <property name="geometry">
        <rect>
         <x>650</x>
-        <y>490</y>
+        <y>480</y>
         <width>141</width>
         <height>41</height>
        </rect>
@@ -1033,7 +1033,7 @@
       <property name="geometry">
        <rect>
         <x>650</x>
-        <y>390</y>
+        <y>380</y>
         <width>141</width>
         <height>41</height>
        </rect>
@@ -1094,7 +1094,7 @@
         <x>20</x>
         <y>20</y>
         <width>791</width>
-        <height>251</height>
+        <height>391</height>
        </rect>
       </property>
       <property name="selectionMode">
@@ -1107,8 +1107,8 @@
      <widget class="QTextEdit" name="phoneNumberTextEdit">
       <property name="geometry">
        <rect>
-        <x>240</x>
-        <y>280</y>
+        <x>160</x>
+        <y>440</y>
         <width>401</width>
         <height>41</height>
        </rect>
@@ -1122,8 +1122,8 @@
      <widget class="QLabel" name="label_17">
       <property name="geometry">
        <rect>
-        <x>160</x>
-        <y>290</y>
+        <x>10</x>
+        <y>440</y>
         <width>71</width>
         <height>31</height>
        </rect>
@@ -1140,8 +1140,8 @@
      <widget class="QPushButton" name="editPhoneButton">
       <property name="geometry">
        <rect>
-        <x>670</x>
-        <y>330</y>
+        <x>630</x>
+        <y>480</y>
         <width>141</width>
         <height>41</height>
        </rect>
@@ -1158,8 +1158,8 @@
      <widget class="QPushButton" name="addPhoneButton">
       <property name="geometry">
        <rect>
-        <x>670</x>
-        <y>280</y>
+        <x>630</x>
+        <y>430</y>
         <width>141</width>
         <height>41</height>
        </rect>
@@ -1173,6 +1173,24 @@
        <string>Добавить</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="exitButton_7">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>480</y>
+        <width>141</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Выход</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="tab_12">
      <attribute name="title">
@@ -1181,8 +1199,8 @@
      <widget class="QPushButton" name="addInvoiceButton">
       <property name="geometry">
        <rect>
-        <x>670</x>
-        <y>280</y>
+        <x>630</x>
+        <y>380</y>
         <width>141</width>
         <height>41</height>
        </rect>
@@ -1199,8 +1217,8 @@
      <widget class="QDateTimeEdit" name="invoiceDateTimeEdit">
       <property name="geometry">
        <rect>
-        <x>250</x>
-        <y>280</y>
+        <x>170</x>
+        <y>440</y>
         <width>401</width>
         <height>41</height>
        </rect>
@@ -1214,8 +1232,8 @@
      <widget class="QPushButton" name="deleteInvoiceButton">
       <property name="geometry">
        <rect>
-        <x>670</x>
-        <y>370</y>
+        <x>630</x>
+        <y>480</y>
         <width>141</width>
         <height>41</height>
        </rect>
@@ -1232,8 +1250,8 @@
      <widget class="QLabel" name="label_22">
       <property name="geometry">
        <rect>
-        <x>40</x>
-        <y>290</y>
+        <x>20</x>
+        <y>440</y>
         <width>201</width>
         <height>31</height>
        </rect>
@@ -1253,7 +1271,7 @@
         <x>20</x>
         <y>20</y>
         <width>791</width>
-        <height>251</height>
+        <height>351</height>
        </rect>
       </property>
       <property name="selectionMode">
@@ -1266,8 +1284,8 @@
      <widget class="QPushButton" name="editInvoiceButton">
       <property name="geometry">
        <rect>
-        <x>670</x>
-        <y>320</y>
+        <x>630</x>
+        <y>430</y>
         <width>141</width>
         <height>41</height>
        </rect>
@@ -1281,6 +1299,24 @@
        <string>Редактировать</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="exitButton_8">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>480</y>
+        <width>141</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Выход</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="tab_13">
      <attribute name="title">
@@ -1289,8 +1325,8 @@
      <widget class="QTextEdit" name="InvoicePositionUnitPriceTextEdit">
       <property name="geometry">
        <rect>
-        <x>240</x>
-        <y>330</y>
+        <x>200</x>
+        <y>440</y>
         <width>401</width>
         <height>41</height>
        </rect>
@@ -1304,8 +1340,8 @@
      <widget class="QLabel" name="label_23">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>290</y>
+        <x>10</x>
+        <y>400</y>
         <width>201</width>
         <height>31</height>
        </rect>
@@ -1322,8 +1358,8 @@
      <widget class="QTextEdit" name="invoicePositionTypeCountTextEdit">
       <property name="geometry">
        <rect>
-        <x>240</x>
-        <y>280</y>
+        <x>200</x>
+        <y>390</y>
         <width>401</width>
         <height>41</height>
        </rect>
@@ -1340,7 +1376,7 @@
         <x>20</x>
         <y>20</y>
         <width>791</width>
-        <height>251</height>
+        <height>351</height>
        </rect>
       </property>
       <property name="selectionMode">
@@ -1353,8 +1389,8 @@
      <widget class="QLabel" name="label_24">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>340</y>
+        <x>10</x>
+        <y>440</y>
         <width>201</width>
         <height>31</height>
        </rect>
@@ -1371,8 +1407,8 @@
      <widget class="QPushButton" name="deleteInvoicePositionButton">
       <property name="geometry">
        <rect>
-        <x>670</x>
-        <y>380</y>
+        <x>630</x>
+        <y>480</y>
         <width>141</width>
         <height>41</height>
        </rect>
@@ -1389,8 +1425,8 @@
      <widget class="QPushButton" name="editInvoicePositionButton">
       <property name="geometry">
        <rect>
-        <x>670</x>
-        <y>330</y>
+        <x>630</x>
+        <y>430</y>
         <width>141</width>
         <height>41</height>
        </rect>
@@ -1407,8 +1443,8 @@
      <widget class="QPushButton" name="addInvoicePositionButton">
       <property name="geometry">
        <rect>
-        <x>670</x>
-        <y>280</y>
+        <x>630</x>
+        <y>380</y>
         <width>141</width>
         <height>41</height>
        </rect>
@@ -1422,6 +1458,24 @@
        <string>Добавить</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="exitButton_9">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>480</y>
+        <width>141</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Выход</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="tab_10">
      <attribute name="title">
@@ -1430,8 +1484,8 @@
      <widget class="QPushButton" name="deleteLocalityButton">
       <property name="geometry">
        <rect>
-        <x>660</x>
-        <y>370</y>
+        <x>630</x>
+        <y>480</y>
         <width>141</width>
         <height>41</height>
        </rect>
@@ -1448,8 +1502,8 @@
      <widget class="QLabel" name="label_16">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>280</y>
+        <x>10</x>
+        <y>400</y>
         <width>201</width>
         <height>31</height>
        </rect>
@@ -1469,7 +1523,7 @@
         <x>10</x>
         <y>10</y>
         <width>791</width>
-        <height>251</height>
+        <height>361</height>
        </rect>
       </property>
       <property name="selectionMode">
@@ -1482,8 +1536,8 @@
      <widget class="QTextEdit" name="localityNameTextEdit">
       <property name="geometry">
        <rect>
-        <x>230</x>
-        <y>270</y>
+        <x>190</x>
+        <y>390</y>
         <width>401</width>
         <height>41</height>
        </rect>
@@ -1497,8 +1551,8 @@
      <widget class="QLabel" name="label_19">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>330</y>
+        <x>10</x>
+        <y>440</y>
         <width>201</width>
         <height>31</height>
        </rect>
@@ -1515,8 +1569,8 @@
      <widget class="QPushButton" name="editLocalityButton">
       <property name="geometry">
        <rect>
-        <x>660</x>
-        <y>320</y>
+        <x>630</x>
+        <y>430</y>
         <width>141</width>
         <height>41</height>
        </rect>
@@ -1533,8 +1587,8 @@
      <widget class="QTextEdit" name="localityShortNameTextEdit">
       <property name="geometry">
        <rect>
-        <x>230</x>
-        <y>320</y>
+        <x>190</x>
+        <y>440</y>
         <width>401</width>
         <height>41</height>
        </rect>
@@ -1548,8 +1602,8 @@
      <widget class="QPushButton" name="addLocalityButton">
       <property name="geometry">
        <rect>
-        <x>660</x>
-        <y>270</y>
+        <x>630</x>
+        <y>380</y>
         <width>141</width>
         <height>41</height>
        </rect>
@@ -1561,6 +1615,24 @@
       </property>
       <property name="text">
        <string>Добавить</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="exitButton_10">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>480</y>
+        <width>141</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Выход</string>
       </property>
      </widget>
     </widget>

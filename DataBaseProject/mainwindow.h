@@ -106,6 +106,14 @@ class MainWindow : public QMainWindow
 
         void on_exitButton_6_clicked();
 
+        void on_exitButton_7_clicked();
+
+        void on_exitButton_9_clicked();
+
+        void on_exitButton_10_clicked();
+
+        void on_exitButton_8_clicked();
+
 private:
         Ui::MainWindow *ui;
         User* _user;
