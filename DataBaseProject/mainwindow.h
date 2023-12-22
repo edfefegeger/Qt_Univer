@@ -120,7 +120,7 @@ class MainWindow : public QMainWindow
 
         void on_deleteInvoicePositionButton_clicked();
 
-        void on_providerDataTable_activated(const QModelIndex &index);
+
 
 private:
         Ui::MainWindow *ui;

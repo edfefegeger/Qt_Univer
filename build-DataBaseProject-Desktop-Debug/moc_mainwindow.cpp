@@ -318,6 +318,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 47: _t->on_addInvoicePositionButton_clicked(); break;
         case 48: _t->on_editInvoicePositionButton_clicked(); break;
         case 49: _t->on_deleteInvoicePositionButton_clicked(); break;
+
         default: ;
         }
     }
